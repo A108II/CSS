@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEM Naming Convention</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="header__title">BEM</h1>
+    <nav class="header__nav">
+      <button class="header__btn header__btn--border-lg">🚀</button>
+      <button class="header__btn header__btn--secondary">🔥</button>
+      <button class="header__btn header__btn--lean">🌮</button>
+    </nav>
+  </header>
+<!-- 
+1. HEADER__TITLE ELEMENT AND HEADER__NAV ELEMENT ARE DEPENDENT ON THE HEADER ELEMENT, HERE WE USE HEADER UNDERSCORE UNDERSCORE + CURRENT CLASS NAME. 
+
+2. WHEN IT COMES TO BUTTONS USED THROUGHOUT THE WEBSITE MULTIPLE TIMES, NAME THEIR CLASSES AS BTN TO AVOID REDEFINING THEM. IF THEY'RE ONLY USED INSIDE THE HEADER AND ONLY RELATED TO THE HEADER, NAME THE CLASS HEADER__BTN.
+
+3. HEADER__BTN DOES NOT REPRESENT THE STRUCTURE, SO AVOID HEADER__NAV__BTN. ONLY START WITH THE MAJOR COMPONENT OR BLOCK, AND THE CURRENT ELEMENT.
+-->
+</body>
+</html>
+

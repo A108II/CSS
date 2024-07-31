@@ -1,0 +1,97 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 
+- IN BOX-SIZING: CONTENT-BOX, WHEN WIDTH IS 400, IT REFERS TO THE CONTENT'S WIDTH, NOT CONSIDERING PADDING AND BORDER
+*/
+
+/* 
+- WHEN WIDTH IS 400 AND BOX-SIZING: BORDER-BOX IS SET, IT INCLUDES CONTENT, PADDING, AND BORDER
+*/
+
+.container {
+  border-top: 1px solid #ffa500;
+  border-right: 3px double #ff0000;
+  border-bottom: 1px dashed #3029bb;
+  border-left: 1px dotted #040005;
+  width: 600;
+  background-color: #08084b;
+  color: #fff;
+  border-radius: 15px;
+  /*
+  margin-top: 0.5em;
+  margin-right: 1em;
+  margin-bottom:1.5em;
+  margin-left: 1em;
+  */
+  padding: 2rem;
+  margin: 0.5rem 1rem 1.5rem  1rem;
+
+
+/* 
+- OUTLINE IS NOT CALCULATED IN THE BOX MODEL EQUATION
+- IF WE INSPECT, WE'LL SEE IT
+*/
+
+/* 
+- NEGATIVE AND POSITIVE VALUES ARE ACCEPTED
+*/
+
+ outline: 2px solid #ff0;
+ outline-offset: -10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.circle {
+  /* 
+- AUTO PLACES THE ELEMENT AT THE CENTER HORIZONTALLY
+  */
+  margin: 1rem auto; 
+  background-color: #000000;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  outline: 4px solid #611cc2;
+  outline-offset: 0.1rem; 
+}
+
+.circle p {
+  margin-top: 2.5rem;
+  text-align: center;
+  background-color: blue;
+  color:white;
+  font-size: 0.8rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* border: 2px solid #000000;
+  border-top: 2px double blue;
+  border-bottom: 2px double red;
+  border-left: 4px dashed orange;
+  border-right: 4px outset rgb(21, 14, 1);
+  width: 400px;
+  font-size: 1.5rem;
+  padding: 1.5em; 
+  margin: 1em 1em 1.5em 1em;
+ */
+

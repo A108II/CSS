@@ -1,0 +1,219 @@
+/* || RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  /* IT WON'T OVERFLOW ITS CONTAINER */
+  max-width: 100%;
+  height: auto;
+}
+
+/* || UTILITY CLASSES */
+.nowrap {
+  white-space: nowrap;
+}
+
+/* || GENERAL STYLES */
+body {
+  font-size: 1rem;
+  font-family: "Courier New", Courier, monospace;
+  min-height: 100vh;
+  background-image: radial-gradient(rgb(30, 57, 175), #071429);
+  display: flex;
+  flex-direction: column;
+}
+
+header,footer {
+  position: sticky;
+  background-color: #121213;
+  color: #fff;
+  text-align: center;
+}
+
+header {
+  top: 0;
+}
+
+nav {
+  font-size: 0.8em;
+  background-color: #222;
+  border-radius: 20px 20px 0 0;
+  border-top: 2px solid #ff0;
+  color: #fff;
+  padding: 1.5rem;
+  border-bottom: 5px solid #fcfcfc;
+  font-weight: bolder;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav a,
+nav a:visited {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+nav a:hover,
+nav a:focus {
+  color: hsla(0, 0%, 100%, 0.656);
+}
+
+nav a:active {
+  color: hsla(0, 0%, 100%, 0.483);
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 5rem;
+}
+
+footer {
+  bottom: 0;
+}
+
+/* || PROFILE CARD */
+.card {
+  /* ADDING 9REM ABOVE ELEMENT WHEN IT'S SCROLLED INTO VIEW. */
+  scroll-margin-top: 8rem;
+  /*
+  - 100% = GROW TO THE 100% OF THE CONTAINER
+  - 400PX = DO NOT GROW ANY LARGER THAN 400PX
+  */
+  width: min(100%, 300px);
+  background-image: radial-gradient(#fff, rgb(85, 139, 255));
+  border: 5px solid #ffffff;
+  padding: 2rem;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card figure {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.card img {
+  border: 8px double #121111;
+  border-radius: 50%;
+}
+
+.card figcaption {
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+  color: rgb(98, 0, 255);
+}
+
+p {
+  font-size: 0.8rem;
+}
+
+/* || SMALL */
+@media screen and (min-width: 576px) {
+  main {
+    justify-content: center;
+    flex-flow: row wrap;
+    padding: 2rem;
+  }
+
+  .card {
+    width: min(100%, 400px);
+  }
+
+  .card:last-child {
+    order: -1;
+  }
+}
+
+/* || MEDIUM */
+@media screen and (min-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  .card {
+    width: min(100%, 350px);
+  }
+
+  .card:nth-child(1) {
+    order: 1;
+  }
+
+  .card figure {
+    flex-direction: column-reverse;
+  }
+
+  .card figcaption {
+    margin: 0.5rem;
+  }
+
+  .card p {
+    margin-top: 0.5rem;
+  }
+}
+
+/* || LARGE */
+@media screen and (min-width: 992px) {
+  .card {
+    width: min(100%, 400px);
+  }
+}
+
+/* || XL */
+@media screen and (min-width: 1200px) {
+  .card {
+    width: min(calc(33% - 1rem), 500px);
+  }
+}
+
+/* || MOBILE DEVICE LANDSCAPE */
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+  nav {
+    display: none;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    /* 
+    - ALIGN-ITEMS: STRETCH; MAKES FLEX ITEMS STRETCH TO FILL THE CONTAINER'S HEIGHT, ENSURING THEY TAKE UP THE AVAILABLE VERTICAL SPACE.
+    */
+    align-items: stretch;
+  }
+
+  .card{
+    width: min(calc(33% - 2.50rem), 200px);
+  }
+
+  .card figure {
+    width: min(100%, 200px);
+  }
+
+  .card figcaption {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  .card p {
+    font-size: 0.4rem;
+  }
+  
+}

@@ -1,0 +1,202 @@
+/* || RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* || VARIABLES */
+
+:root {
+  /* FONT */
+  --FF: "Courier New", Courier, monospace;
+
+  /* 
+- MIN
+- 1.5REM: ABSOLUTE VALUE
+- 3VH: RELATIVE VALUE THAT ADJUSTS ITSELF
+- 1.5REM IS THE UPPER LIMIT, WHICH THE SIZE CAN'T GROW BEYOND THAT.
+- --FS: MIN(1.5REM, 3VH);
+
+- MAX
+- 1.2REM IS THE LOWEST BOUNDARY, WHICH SIZE CAN NOT SHRINK BEYOND THAT.
+- --FS: MAX(1.2REM, 3VH);
+
+- BETTER FUNCTION THAN MIN AND MAX
+- MINIMUM - RELATIVE SIZE - MAXIMUM
+  */
+
+  --FS: clamp(1.2rem, 3vh, 1.5rem);
+  --FS-SM: clamp(0.8rem, 1.8vh, 1.1rem);
+  --FS-XL: 3rem;
+
+  /* COLOR */
+  --BGCOLOR: #b5c0ef;
+  --ALTBGCOLOR: #adb5e0;
+  --WHITECOLOR: #fff;
+  --DARKCOLOR: #000;
+
+  /* SQUARE */
+  --SQUARE-BGCOLOR: papayawhip;
+  --SQUARE-SIZE: max(120px, 20vw);
+
+  /* GENERAL */
+  --PADDING: 0.5em;
+  --SHADOWS: 0 10px 5px -5px var(--DARKCOLOR);
+  --BORDERS: 5px solid var(--WHITECOLOR);
+}
+
+/* || DEFINING DARK MODE */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --BGCOLOR: #000000;
+    --ALTBGCOLOR: #333333;
+    --SQUARE-BGCOLOR: #091956;
+  }
+  p {
+    color: var(--WHITECOLOR);
+  }
+}
+
+/* || GENERAL STYLES */
+body {
+  font-size: var(--FS);
+  font-family: var(--FF);
+  min-height: 100vh;
+  background-image: radial-gradient(var(--BGCOLOR), #071429);
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  position: sticky;
+  background-color: var(--ALTBGCOLOR);
+  color: var(--WHITECOLOR);
+  text-align: center;
+}
+
+header {
+  top: 0;
+  /* color: red; */
+}
+
+nav {
+  font-size: 0.8em;
+  background-color: #1849ce;
+  color: var(--WHITECOLOR);
+  border-bottom: var(--BORDERS);
+  font-weight: bolder;
+  border: var(--BORDERS);
+  /* 
+  - 0: HORIZONTAL DISPLACEMENT
+  - 10PX: VERTICAL DISPLACEMENT
+  - 5PX: BLUR RADIUS, SHADOW BLURRED BY 5PX
+  - -5PX: SPREAD RADIUS REDUCES SIZE OF SHADOW BY 5PX 
+  */
+  box-shadow: var(--SHADOWS);
+}
+
+main {
+  /* display: flex;
+  flex-flow: column nowrap; */
+
+  /* flex-grow: 1; */
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 300px));
+  gap: min(2vw, 20px);
+  padding: 1rem;
+}
+
+main {
+  flex-grow: 1;
+  padding: var(--PADDING);
+}
+
+main aside {
+  font-size: var(--FS-SM);
+  font-style: italic;
+  background-color: var(--DARKCOLOR);
+  color: var(--WHITECOLOR);
+  padding: var(--PADDING);
+  background-color: #333333;
+}
+
+.content {
+  margin-top: 1rem;
+}
+
+.tooltip {
+  border-bottom: 2px dashed orange;
+  position: relative;
+}
+
+.tooltip:hover::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -30px;
+  white-space: nowrap;
+  background-color: var(--DARKCOLOR);
+  padding: var(--PADDING);
+  border-radius: 15px;
+} 
+
+
+
+footer {
+  bottom: 0;
+}
+
+/* || FEATURES */
+
+.square--highlight {
+  --SQUARE-BGCOLOR: cornflowerblue;
+}
+
+.square {
+  background-color: var(--SQUARE-BGCOLOR);
+  width: var(--SQUARE-SIZE);
+  height: var(--SQUARE-SIZE);
+  border: var(--BORDERS);
+  border-radius: 15px;
+  display: grid;
+  place-content: center;
+  font-size: var(--FS-XL);
+  box-shadow: var(--SHADOWS);
+}
+
+p {
+  color: var(--WHITECOLOR);
+}
+
+a:any-link {
+  color: green;
+}
+
+
+a:is(:hover, :focus) {
+  filter: brightness(150%);
+
+}
+
+
+@media screen and (min-width: 576px) {
+  main {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  main section {
+    width: calc(70% - 5px);
+  }
+
+  main aside {
+    /* width: calc(30% - 5px); */
+    width: calc(30% - 5px);
+  }
+
+  /* 
+- THE 5PX ADJUSTMENT HELPS CREATE A VISUAL GAP BETWEEN THE `SECTION` AND `ASIDE` ELEMENTS
+- ENSURING THEY DO NOT TOUCH OR OVERLAP AND FIT NEATLY WITHIN THE PARENT CONTAINER.
+  */
+}

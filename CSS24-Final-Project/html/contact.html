@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Papanya Pizza - Contact Us</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ali Saadati">
+  <meta name="description" content="Papanya pizza contact page">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="shortcut icon" href="../img/pizza.png" type="image/x-icon">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="header__h1">PAPANYA PIZZA</h1>
+    <nav aria-label="primary navigation" class="header__nav">
+      <ul class="header__ul">
+        <li><a href="../html/index.html" target="_blank">Home</a>
+        </li>
+        <li><a href="../html/index.html#menu" target="_blank">Menu</a>
+        </li>
+        <li><a href="../html/hours.html" target="_blank">Hours</a>
+        </li>
+        <li><a href="../html/hours.html" target="_blank">About</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <figure>
+      <img src="../img/papanyaPizza2.jpeg" alt="Papanya pizza" title="Picture of papnya pizza" width="800" height="800">
+      <figcaption class="offscreen">Papanya Special Pizza</figcaption>
+    </figure>
+  </section>
+
+  <main class="main">
+    <article class="main__article">
+      <h2>Our Location</h2>
+      <address>
+        444 Pizza Temptation Lane, Suit Z <br>
+        Kansas City, MO 44444-5555
+        <p>Phone:</p>
+        <a href="tel:555-555-5555">555-555-5555</a>
+      </address>
+    </article>
+
+    <hr>
+
+    <article class="main__article contact">
+      <h2 class="contact__h2">Our contact form</h2>
+      <form action="https://httpbin.org/get" method="get" class="contact__form">
+        <fieldset class="contact__fieldset">
+          <legend class="offscreen">Send Us a message</legend>
+          <p class="contact__p">
+            <label class="contact__label" for="name">Name:</label>
+            <input class="contact__input" type="text" name="name" id="name" placeholder="John Doe" autofocus
+              autocomplete="on" required>
+          </p>
+
+          <p class="contact__p">
+            <label class="contact__label" for="email">Email:</label>
+            <input class="contact__input" type="email" name="email" id="email" placeholder="John@example.com" required>
+          </p>
+
+          <p class="contact__p">
+            <label class="contact__label" for="message">Your message:</label>
+            <br>
+            <textarea class="contact__textarea" name="message" id="message" cols="30" rows="10"
+              placeholder="Type Your message Here"></textarea>
+          </p>
+        </fieldset>
+
+        <button class="contact__button" type="submit">Send</button>
+        <button class="contact__button" type="reset">Reset</button>
+      </form>
+    </article>
+
+    <br>
+
+    <p class="center"><a href="#">Back to Top</a>
+    </p>
+  </main>
+
+  <hr>
+
+  <footer class="footer">
+    <p class="footer__p">
+      <span class="nowrap">Copyright &copy;<time id="year"></time></span>
+      <span>PAPANYA PIZZA</span>
+    </p>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  padding: 2px;
+}
+
+.container {
+  max-width: 800px;
+  min-height: 400px;
+  margin-inline: auto;
+  border: 2px solid #00f;
+  /* DEFAULT: HORIZONTALLY ALIGNING ITEMS TO START */
+  display: flex;
+  /* ALIGN ITEMS HORIZONTALLY */
+  /* justify-content:flex-start */
+
+  /* VERTICALLY ALIGNS ITEMS TO THE CENTER */
+  /* align-items:center; */
+
+  /* DIRECTION OF FLEX */
+  /* flex-direction:column; */
+
+  /* 
+  - AS WE MINIMIZE THE DISPLAY, THE FLEX BOX GETS OUT OF THE CONTAINER AND DOES NOT RESIZE PROPERLY. - FOR THIS REASON WE USE flex-wrap: wrap
+   */
+  /* flex-wrap:wrap; */
+
+  /* 
+  SHORTHAND FOR flex-direction:row AND flex-wrap: wrap 
+   */
+
+  /* 
+  flex-flow: row wrap-reverse;
+   */
+
+  /* 
+- USEFUL WHEN WE HAVE MULTIPLE LINES, THIS ALIGNS THE ROWS TO THE CENTER. 
+- WHEN WE INSPECT AND RESIZE THE PAGE TO SMALLER SIZES, WE'LL SEE WE HAVE MULTIPLE LINES OF ITEMS. 
+- THIS WAY WE CAN CONTROL THE SPACING BETWEEN MULTIPLE LINES WITH `ALIGN-CONTENT`, WHICH CANNOT BE POSSIBLE WITH `ALIGN-ITEMS`.
+   */
+
+  /* 
+- SPACE-AROUND: DISTRIBUTES ITEMS WITH EQUAL SPACE AROUND THEM; THE SPACE ON THE EDGES IS HALF OF WHAT'S BETWEEN ITEMS.
+- SPACE-BETWEEN: DISTRIBUTES ITEMS WITH EQUAL SPACE BETWEEN THEM; NO SPACE AT THE EDGES.
+- SPACE-EVENLY: DISTRIBUTES ITEMS WITH EQUAL SPACE AROUND THEM, INCLUDING THE EDGES.
+*/
+
+  /* Test */
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  flex-flow: column nowrap;
+  align-content: center;
+}
+
+.box {
+  /* min-width: 150px; */
+  height: 150px;
+  background-color: #000;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.5rem;
+
+  /* CENTERS NUMBER INSIDE THE CONTAINER */
+  
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+ 
+  /* 
+  - SETS THE INITIAL WIDTH OF THE BOX FOR ROW LAYOUT, HEIGHT FOR COLUMN LAYOUT FOR FLEX BOX.
+  */
+  /* flex-basis: 150px; */
+  /* 
+  - IF THE BOXES GROW TO FILL THE AVAILABLE SPACE, THEY WILL GROW THE SAME AMOUNT.
+  */
+  /* flex-grow: 1; */
+  /* flex-shrink: 1;
+  flex-basis: 150px; */
+
+  /* 
+  - SHORTHAND FOR GROW SHRINK AND BASIS
+   */
+  /* flex: 1 1 150px; */
+
+  /* Test */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 150px;
+ 
+}
+
+.box:nth-child(2){ 
+  flex-grow: 2; 
+  flex-shrink: 2;
+  flex: 2 2 150px;
+  /* 
+  IF ORDER IS GREATER THAN 0, THEN IT GOES TO THE END OF THE LIST. IF -1, IT GOES TO THE BEGINNING OF THE LIST.
+   */
+  order: 1;
+}
+
+/* 
+flex-grow: 1, flex-grow: 2
+Here 1st and 2nd box will take up the 150px, after that box 2 will take the remaining space twice as much as the first box.
+*/
+
+/* 
+flex-shrink: 1;, flex-shrink: 2
+Here 2nd box will shrink two times more than the first box. Here we set the flex-basis: 150px and and flex-flow: row nowrap container class to see how order works.
+*/

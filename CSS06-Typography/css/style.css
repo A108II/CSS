@@ -1,0 +1,78 @@
+/* 
+- TYPOGRPAHY IS THE WAY TEXT IS ARRANGED AND PRESENTED
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 5%; 
+  /* 5% IS RELATIVE TO THE WIDTH OF VIEWPORT */
+  margin: 5%;
+  border: 2px solid #fffefe;
+  font-size: 1.5rem;
+  background-color: #05125b;
+  color:#0089ff
+}
+
+/*
+- FORM ELEMENTS DO NOT INHERIT FONT SIZE FROM THE BODY, SO WE NEED TO SPECIFY THAT IT SHOULD INHERIT THE FONT.
+- HERE, `FONT:INHERIT` INHERITS THE FONT FROM THE BODY.
+*/
+
+input, button{
+  font:inherit;
+}
+
+.important {
+  text-decoration: line-through;
+  text-transform: uppercase;
+  font-weight: bolder;
+  color:#0089ff;
+}
+
+p {
+  /* text-decoration: underline; */
+
+  /* text-transform: uppercase; */
+
+  text-align: justify;
+
+  text-indent: 2em;
+  /* 
+  default: 1.2
+  SETS THE LINE HEIGHT 2 TIMES THE FONT SIZE
+  */
+  line-height: 2;
+ 
+  /* letter-spacing: 0.1em; */
+
+  /* word-spacing: 0.1em; */
+
+  /* default 300 */
+  font-weight:100;
+
+  /* font-style: oblique */
+
+  font-family: "Roboto", sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  padding: 10%;
+  margin: 10%;
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  border: 1px solid #000;
+}
+
+ol {
+  text-align: center;
+  list-style-type:decimal;
+  list-style-position:inside;
+  line-height: 2.5;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+ul {
+  text-align: center;
+  list-style-type: disc;
+  list-style-image: url('../img/checkmark.png');
+  list-style-position:inside;
+  /* SHORTHAND FOR type, position, image */
+  /* FIRST DEFINE STYLE TYPE */
+  /* THEN STYLE IMAGE  */
+  /* FINALLY POSITION */
+  list-style: disc url('../imeg/checkmark.png') inside;
+  line-height: 2;
+}
+
+ul li:first-child {
+  color: #f23;
+  font-weight: 500;
+}
+
+ul li:nth-child(2) {
+  color: #23f;
+  font-weight: 500;
+}
+
+ul li:nth-child(3) {
+  color: rgb(9, 144, 9);
+  font-weight: 500;
+}
+
+ul li:nth-child(4) {
+  color: #ff0;
+  background-color: #000;
+}
+
+ul ::marker {
+  content: ">> Price >>  $2 >> ";
+  font-style:oblique;
+  color: #ffa500;
+}
+
+/* 
+- THE ::MARKER PSEUDO-ELEMENT TARGETS THE MARKER BOX OF LIST ITEMS IN AN UNORDERED LIST (UL).
+- THE ::MARKER PSEUDO-ELEMENT REFERS TO THE BULLET POINT OR NUMBER ON THE LEFT SIDE OF THE LIST ITEM.
+- IT CAN BE A DISC, CIRCLE, SQUARE, OR NUMBER, DEPENDING ON THE LIST STYLE TYPE. 
+*/
+ 
+
+
+
+
+

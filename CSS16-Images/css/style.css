@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background-image: url("../img/bubbles.png"), linear-gradient(to left, #120d71, #fff);
+    /* REPEAT VERTICALLY, NOT REPEAT HORIZONTALLY */
+  background-repeat: repeat-y, no-repeat;
+  /* 
+  - ALIGNS THE BUBBLE IMAGE TO RIGHT
+  - SETS LINEAR_GRADIEENT TO CENTER AS IT COVERS THE ENTIRE BACKGROUND
+  */
+  background-position: right center;
+  background-size: 20%, auto;
+
+  /* BACKGROUND SHORTHAND */
+  /* background: repeat-y right / 20% url("../img/bubbles.png"), no-repeat center / auto linear-gradient(to left, #6d66f2, #fff); */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* MAKE IMAGE A BLOCK LEVEL ELEMENT */
+img {
+  display:block;
+}
+
+/* UTILITY CLASSES */
+.nowrap {
+  white-space: wrap;
+}
+
+.offscreen {
+  position: absolute;
+  left: -1000px;
+} 
+/* END UTILITY CLASSES */
+
+body {
+  font-family:Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  /* background-color: #faebd7;
+  background-image: url("../img/bubbles.png"), linear-gradient(to left, #6d66f2, #fff);
+  background-repeat: repeat-y, no-repeat;
+  background-position: right center;
+  background-size: 10% ,auto; */
+
+  /* BACKGROUND SHORTHAND */
+  /* background: repeat-y right / 10% url("../img/bubbles.png"), no-repeat center / auto linear-gradient(to left, #6d66f2, #fff); */
+}
+
+/* 1ST SECTION */
+.example {
+  margin-top: 1rem;
+  padding-left: 20px;
+  border: 1px solid red;
+}
+
+.example img {
+  /* - 25% OF THE CONTAINER'S WIDTH */
+  width: 25%;
+  /* 
+  - HEIGHT WILL BE ADJUSTED ACCORDING TO THE WIDTH AUTOMATICALLY.
+   */
+  height: auto;
+}
+  
+/* 2ND SECTION */
+/*
+- COVER: IMAGE COVERS THE ENTIRE ELEMENT, PARTS MAY BE CLIPPED.
+- CONTAIN: IMAGE IS FULLY VISIBLE, MAY HAVE EMPTY SPACE AROUND IT.
+ */
+.container {
+  background-color: #5a5a5a;
+  background-image: url('../img/wideImage.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero {
+  border-bottom: 5px solid #a2a00f;
+  padding: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px; 
+  background-color: hsla(0, 0%, 0%, 0.3);
+}
+
+.profile-pic-figure {
+  width: 25%;
+}
+
+.profile-pic-figure img {
+  width: 100%;
+  height: auto;
+  border: 5px double #fffafa;
+  border-radius: 50%;
+}
+
+.h1 {
+  font-size: 30px;
+  color: #fff;
+  /* x-axis y-axis blurred shadow shadow color*/
+  text-shadow: 2px 2px 1px #000;
+  /* background-color: hsla(0, 0%, 0%, 0.413); */
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+
+
+.clip {
+  font-weight: 800;
+  font-size:8rem;
+  text-align: center;
+  background-image: url("../img/wideImage.jpg");
+  background-size: cover;
+  text-transform: uppercase;
+  /* -webkit prefix is required for chrome browser */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color:hsla(0, 86%, 6%, 0.143);
+}
+
+
+
+
+

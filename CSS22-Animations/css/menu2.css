@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --BG-COLOR: #888;
+  --COLOR: #fff;
+  --BGHD-COLOR: #333;
+  --HD-COLOR: #eee;
+}
+
+html {
+  font-family:'Courier New', Courier, monospace;
+  font-size: 1.5rem;
+}
+
+body {
+  background-color: var(--BG-COLOR);
+  color: var(--COLOR);
+  min-height: 100vh;
+}
+
+header {
+  background-color: var(--BGHD-COLOR);
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0.5rem;
+}
+
+.header-title-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem;
+}
+
+.menu-button {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+  background-color: var(--HD-COLOR);
+  width: 30px;
+  height: 3px;
+  border-radius: 20px;
+  position: relative;
+  transition: transform 0.5s;
+}
+
+.menu-icon::before,
+.menu-icon:after
+{
+  content: "";
+}
+
+.menu-icon::before {
+  position: absolute;
+  transform: translate(-15px, -8px);
+
+}
+
+.menu-icon::after {
+  position: absolute;
+  transform: translate(-15px, 8px);
+}
+
+.menu-button:hover .menu-icon, .menu-button:focus .menu-icon {
+  background-color: transparent;
+  transform: rotate(360deg);
+}
+
+.menu-button:hover .menu-icon::before, .menu-button:focus .menu-icon:before {
+  transform: translateX(-15px) rotate(45deg);
+}
+
+.menu-button:hover .menu-icon:after, .menu-button:focus .menu-icon::after {
+  transform: translateX(-15px) rotate(-45deg);
+}
+
+header:hover nav, header:focus-within nav{
+  display: block
+}
+
+nav {
+  display: none;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-direction:normal;
+  animation-name: show_menu;
+  transform-origin: top center;
+}
+
+@keyframes show_menu {
+  0% {
+    transform: scaleY(0)
+  }
+
+  66% {
+    transform: scaleY(1.02)
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+nav li {
+  border-top: 1px solid var(--COLOR);
+  padding: 0.5rem;
+}
+
+nav a {
+  display: block;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+
+nav a:any-link {
+  color: var(--COLOR);
+  text-decoration: none;
+}
+
+nav a:hover, nav a:focus {
+  transform: scale(1.2);
+  transition: transform 0.5s;
+}
+
+
+

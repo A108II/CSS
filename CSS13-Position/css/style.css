@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 2rem;
+  height: 300vh;
+}
+
+.outer-container {
+  border: 3px dashed #000;
+  width: 75vw;
+  height: 85vw;
+  margin: 150px auto;
+  position: relative;
+}
+
+.inner-container {
+  border: 2px dashed #000;
+  width: 45vw;
+  height: 55vw;
+  margin: 200px auto;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.absolute {
+  background-color: #00f;
+  /* default setting */
+  /* position:static; */
+  position: absolute;
+
+  /* 
+  - MOVE 100PX FROM TOP TO DOWN
+  - MOVE 50OX FROM LEFT TO RIGHT
+  */
+  /* 
+  top: 100px;
+  left: 50px;
+   */
+
+/* 
+- ABSOLUTE POSITIONING NEEDS A NEAREST RELATIVE PARENT. 
+- IF IT DOES NOT HAVE AN ANCESTOR ELEMENT THAT IS POSITIONED `RELATIVE`, THEN IT TAKES THE INITIAL BOUNDARY WHICH IS THE BROWSER WINDOW. 
+- IN THIS SITUATION, WE CAN SET A POSITION ON THE OUTSIDE-CONTAINER TO `POSITION: RELATIVE`. 
+- IF WE SET `POSITION: RELATIVE` TO INNER-CONTAINER, THE BLUE BOX WILL POSITION ITSELF INSIDE THE INNER-CONTAINER.
+*/
+   top: 0;
+   left: 15px;
+/* 
+- z-index:1 ENSURE ABSOLUTE BOX STANDS OUT WHEN ITEMS ARE COLLIDING WITH EACHOTHER
+*/
+   z-index: 1;
+/* 
+- IF WE WANT TO HIDE CERTAIN THINGS, AND NOT DELETE IT FROM THE DOCUMENT, TO ENSURE IT'S AVAILABLE TO SCREEN READERS WE CAN USE: `LEFT:-1000PX;`.
+*/
+/* left: -1000px; */
+}
+
+.relative {
+  background-color: #f00;
+  position: relative;
+  /* 
+  RELATIVE POSITION IS GOING TO BE RELATIVE TO ITS NEAREST PARENT CONTAINER
+   */
+  top: 0;
+  left: 190px;
+}
+
+/* `
+POSITION: FIXED` IS RELATIVE TO THE VIEWPORT (THE BROWSER WINDOW).
+ */
+.fixed {
+  background-color: #0b520b;
+  position: fixed;
+  top: 0px;
+  left:30px;
+}
+
+/* 
+- STICKY IS RELATIVE TO SCROLL TRACK
+- WHEN SCROLL TRACK REACHES THE STICKY BOX, STICKY BOX STICKS TO THE PAGE UNTIL IT REACHES TO THE END OF ITS PARENT CONTAINER
+*/
+.sticky {
+  background-color: #000;
+  position:sticky;
+  top:0;
+  left:0px;
+}
+
+/* ---------------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  height: 100vh;
+}
+
+.blue {
+  background-color: #00f;
+}
+
+.red {
+  background-color: #f00;
+}
+
+.green {
+  background-color: #9d0;
+}
+
+header, footer {
+  color:#fff;
+  height: 60px;
+  text-align:center;
+  font-size: 3rem;
+}
+
+header {
+  position: sticky;
+  top:0
+}
+
+footer {
+  background-color: #000000;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+/* 
+- WHEN `POSITION: FIXED` FOOTER DOES NOT TAKE UP THE WHOLE WIDTH
+- FOR THIS REASON WE USE `WIDTH: 100%`
+- ANOTHER METHOD TO SOLVE THIS PROBLEM WOULD BE: `POSITION: STICKY`
+- THIS WAY WE DON'T NEED TO SPECIFY THE `WIDTH: 100%`.
+*/
+}
+
+a:visited {
+  color:#fff;
+}
+
+.social {
+  background-color: rgb(0, 0, 0);
+  padding: 1.8rem;
+  position: fixed;
+  top: 50%;
+  z-index: 1;
+  border-radius: 20%;
+/* 
+- MEANS THE CORNERS OF AN ELEMENT WILL BE ROUNDED
+- THE RADIUS OF THE CURVE BEING 20% OF THE ELEMENT'S WIDTH OR HEIGHT, WHICHEVER IS SMALLER.
+- IF THE HEIGHT IS SMALLER, THE BORDER-RADIUS WILL BE 20% OF THE HEIGHT.
+*/
+  margin-left: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+

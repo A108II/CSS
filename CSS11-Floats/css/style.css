@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+
+
+   /* 
+
+
+  /* Current correct way of doing the same thing */
+  /* 
+  display: flow-root; makes an element a block-level container for its contents, enabling it to establish a new block formatting context. This helps in managing floats within the element and ensures that the element contains its floated children.
+    */
+  /* display:flow-root; */
+ 
+  /* color: #fff;
+  display: flow-root;
+} */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 1.5rem;
+}
+
+section {
+  max-width: 80%;
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  border: 2px solid #333;
+  text-align: center;
+
+  display: flow-root;
+/* 
+- MAKES AN ELEMENT A BLOCK-LEVEL CONTAINER FOR ITS CONTENTS, ENABLING IT TO ESTABLISH A NEW BLOCK FORMATTING CONTEXT. 
+- THIS HELPS IN MANAGING FLOATS WITHIN THE ELEMENT AND ENSURES THAT THE ELEMENT CONTAINS ITS FLOATED CHILDREN.
+- MUCH PREFERRED TO overflow:auto
+*/
+
+/* overflow: auto; */
+/*
+- 
+- IN THIS CASE MAKES THE CONTAINER EXTEND BEYOND THE TEXT AND TAKE UP THE SPACE WHICH INCLUDES THE BLACK BOX (FLOAT).
+*/
+ 
+}
+
+.block {
+  border: 1px solid #333;
+  background-color: #a5e;
+  color: #fff;
+  width: 30vw;
+  height: 30vw;
+
+}
+
+
+.right {
+  float: right;
+}
+
+
+/* .clear {
+  clear: both;
+} */
+
+ /* 
+ - THE `.CLEAR { CLEAR: BOTH; }` CLASS IS USED TO PREVENT ELEMENTS FROM WRAPPING AROUND FLOATED ELEMENTS
+ - ENSURING THAT THE ELEMENT WITH THIS CLASS STARTS ON A NEW LINE, BELOW ANY PRECEDING FLOATED CONTENT.
+*/
+
+
+
+p {
+  margin: 1.5rem;
+
+}
